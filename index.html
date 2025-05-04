@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitgliedsantrag</title>
+    <link href="https://intranet.mirnomore.org/lupintemplates/intranet/static/css/gfonts/fonts.css?___s__18d3fdde438" media="screen" rel="stylesheet" title="normal" type="text/css">
     <style>
+
+        @font-face {
+          font-family: 'Steelfish';
+          src: url('./Steelfish.otf') format('opentype');
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: Montserrat, sans-serif;
             margin: 40px;
             background-color: #f9f9f9;
         }
         h1 {
-            color: #333;
+            color: #0e3f5b;
+            font-family: Steelfish, sans-serif;
+            text-transform: uppercase;
         }
         form {
             background: #fff;
@@ -23,23 +35,50 @@
         div {
             position: relative;
             margin-top: 20px;
+            /*border:1px solid red;*/
         }
-        input, select, textarea {
+        input, select {
+            box-sizing: border-box;
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none;
+            font-size:1.2rem;
+            height:4rem;
+            line-height:4rem;
+            transition:0.1s ease;
+            color:#fff;
         }
         label {
             position: absolute;
-            top: -10px;
-            left: 10px;
-            background: white;
+            left:20px;
+            top:0;
+            background: transparent;
             padding: 0 5px;
-            font-size: 14px;
-            color: #555;
+            line-height:4rem;
+            color: #c0c0c0;
+            transition: 0.2s ease;
         }
+
+        selct:valid,
+        select:focus,
+        input:valid,
+        input:focus {
+            color:#666;
+        }
+    
+        selct:valid + label,
+        select:focus + label,
+        input:valid + label,
+        input:focus + label {
+            font-size:88%;     
+            color:#666;
+            background-color:#fff;
+            line-height:1rem;
+            top:-6px;
+        }
+        
         textarea {
             resize: vertical;
         }
@@ -64,45 +103,45 @@
 <form action="/submit" method="post">
 
     <div>
-        <input type="text" id="vorname" name="vorname" required>
+        <input required type="text" id="vorname" name="vorname" required>
         <label for="vorname">Vorname</label>
     </div>
 
     <div>
-        <input type="text" id="nachname" name="nachname" required>
+        <input required type="text" id="nachname" name="nachname" required>
         <label for="nachname">Nachname</label>
     </div>
 
     <div>
-        <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+        <input required type="date" id="geburtsdatum" name="geburtsdatum" required>
         <label for="geburtsdatum">Geburtsdatum</label>
     </div>
 
     <div>
-        <input type="text" id="adresse" name="adresse" required>
+        <input required type="text" id="adresse" name="adresse" required>
         <label for="adresse">Adresse</label>
     </div>
 
     <div>
-        <input type="text" id="plz" name="plz" required>
+        <input required type="text" id="plz" name="plz" required>
         <label for="plz">PLZ</label>
     </div>
 
     <div>
-        <input type="text" id="ort" name="ort" required>
+        <input required type="text" id="ort" name="ort" required>
         <label for="ort">Ort</label>
     </div>
 
     <div>
-        <input type="email" id="email" name="email" required>
+        <input required type="email" id="email" name="email" required>
         <label for="email">E-Mail</label>
     </div>
 
     <div>
-        <input type="tel" id="telefon" name="telefon">
+        <input required type="tel" id="telefon" name="telefon">
         <label for="telefon">Telefonnummer</label>
     </div>
-
+<!--
     <div>
         <select id="mitgliedschaft" name="mitgliedschaft" required>
             <option value="" hidden></option>
@@ -112,12 +151,7 @@
         </select>
         <label for="mitgliedschaft">Art der Mitgliedschaft</label>
     </div>
-
-    <div>
-        <textarea id="bemerkung" name="bemerkung" rows="4"></textarea>
-        <label for="bemerkung">Bemerkungen (optional)</label>
-    </div>
-
+-->
     <button type="submit">Antrag absenden</button>
 </form>
 
