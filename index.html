@@ -1,1 +1,125 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitgliedsantrag</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        div {
+            position: relative;
+            margin-top: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 15px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mitgliedsantrag</h1>
+
+<form action="/submit" method="post">
+
+    <div>
+        <input type="text" id="vorname" name="vorname" required>
+        <label for="vorname">Vorname</label>
+    </div>
+
+    <div>
+        <input type="text" id="nachname" name="nachname" required>
+        <label for="nachname">Nachname</label>
+    </div>
+
+    <div>
+        <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+        <label for="geburtsdatum">Geburtsdatum</label>
+    </div>
+
+    <div>
+        <input type="text" id="adresse" name="adresse" required>
+        <label for="adresse">Adresse</label>
+    </div>
+
+    <div>
+        <input type="text" id="plz" name="plz" required>
+        <label for="plz">PLZ</label>
+    </div>
+
+    <div>
+        <input type="text" id="ort" name="ort" required>
+        <label for="ort">Ort</label>
+    </div>
+
+    <div>
+        <input type="email" id="email" name="email" required>
+        <label for="email">E-Mail</label>
+    </div>
+
+    <div>
+        <input type="tel" id="telefon" name="telefon">
+        <label for="telefon">Telefonnummer</label>
+    </div>
+
+    <div>
+        <select id="mitgliedschaft" name="mitgliedschaft" required>
+            <option value="" hidden></option>
+            <option value="aktiv">Aktives Mitglied</option>
+            <option value="fördernd">Förderndes Mitglied</option>
+            <option value="ehren">Ehrenmitglied</option>
+        </select>
+        <label for="mitgliedschaft">Art der Mitgliedschaft</label>
+    </div>
+
+    <div>
+        <textarea id="bemerkung" name="bemerkung" rows="4"></textarea>
+        <label for="bemerkung">Bemerkungen (optional)</label>
+    </div>
+
+    <button type="submit">Antrag absenden</button>
+</form>
+
+</body>
+</html>
